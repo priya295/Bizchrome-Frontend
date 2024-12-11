@@ -1,10 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import HomeLayout from "./pages/Client/Home.jsx";
+import ClientHome from "./pages/Client/Home.jsx";
+import HomeLayout from "./pages/Global/Home.jsx";
 
 function App() {
   return (
     <div>
       <Routes>
+        <Route path="/Client" element={<ClientHome />} />
         <Route path="/" element={<HomeLayout />} />
       </Routes>
     </div>

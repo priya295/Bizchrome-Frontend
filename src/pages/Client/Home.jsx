@@ -6,9 +6,10 @@ import Section2 from "../../components/Client/Home/Section2.jsx";
 const HomeLayout = () => {
   return (
     <>
-    <Header />
-    <Section1/>
-    <Section2/>
+    <Header /> 
+   <Section1/> 
+   <Section2/>
+
     </>
   )
 }
