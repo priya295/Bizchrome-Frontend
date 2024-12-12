@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import ClientHome from "./pages/Client/Home.jsx";
 import HomeLayout from "./pages/Global/Home.jsx";
-
 function App() {
   return (
     <div>

@@ -1,0 +1,64 @@
+.rounded-word{
+    animation-name: example;
+    animation-duration: 4s;
+    animation: example 3s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate;
+
+}
+.shadow-cs {
+    box-shadow: 0 0 5px #cfcfcf;
+ 
+  }
+  .shape{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .shape::before{
+    position: absolute;
+    content: "";
+    background: #3c82f69e;
+    width: 62px;
+    height: 62px;
+    right: -18px;
+    bottom: -22px;
+    border-radius: 50%;
+    transition: all .5s ease;
+    animation: zoom-fade 5s linear infinite;
+
+  }
+  .shape::after{
+    position: absolute;
+    content: "";
+    border: solid;
+    border-width: 7px;
+    border-color:#3c82f69e;
+    right: -37px;
+    bottom: -41px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    /* opacity: .1; */
+    transition: all .5s ease;
+    animation: zoom-fade 8s linear infinite
+
+  }
+  .attractive-font{
+    font-family: math;
+  }
+  .card-freelencer{
+    transition: all 0.4s linear;
+  
+
+  }
+ 
+.card-freelencer:hover{
+    transform: translateY(-8px);
+}
+@keyframes example {
+    0% {
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
