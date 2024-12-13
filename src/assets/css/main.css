@@ -1,0 +1,108 @@
+.category-link::before {
+    position: absolute;
+    content: "";
+    height: 36px;
+    width: 2px;
+    top: 0;
+    left: 0;
+    background: blue;
+    display: none;
+}
+
+.category-link:hover::before {
+    display: block;
+}
+
+.banner-section {
+    position: relative;
+    z-index: 1;
+}
+
+.banner-section::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('../slider2_bg.png');
+    z-index: -1;
+}
+.custom-shadow{
+    box-shadow: 0px 0px 5px #e9e4e4;
+}
+
+.proof {
+    animation: proofhead 3s linear infinite alternate;
+}
+
+@keyframes proofhead {
+    0% {
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.professional{
+    animation: professionalhead 3s linear infinite alternate;
+}
+@keyframes professionalhead {
+    0% {
+        transform: translateX(30px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+.safe{
+    animation: safehead 3s linear infinite alternate;
+}
+@keyframes safehead {
+    0% {
+        transform: translateX(30px);
+    }
+    100%{
+        transform: translateX(-100px);
+    }
+}
+
+
+.swiper-wrapper{
+    gap: 30px;
+}
+.categorytab .react-tabs__tab--selected{
+    background-color:#1f47bb;
+    color: white;
+    border: 1px solid #1f47bb;
+}
+.categorytab .tab::-webkit-scrollbar {
+    width: 1px;
+    border-radius:5px;
+    height: 4px;
+  }
+  
+  /* Track */
+  .categorytab .tab::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .categorytab .tab::-webkit-scrollbar-thumb {
+    background: #1f46ba; 
+    border-radius:10px;
+    
+  }
+  
+  /* Handle on hover */
+  .categorytab .tab::-webkit-scrollbar-thumb:hover {
+    background: #1f46ba; 
+  }
+  .card-div{
+    width: -webkit-fill-available;
+  }
+  .swiper-wrapper{
+    gap: 0px !important;
+  }

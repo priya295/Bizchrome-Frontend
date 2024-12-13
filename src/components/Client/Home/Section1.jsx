@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import section1 from "../../../assets/section1 image.jpg";
+import section1 from "../../../assets/users1.jpg";
+import { FaSearch } from "react-icons/fa";
+import userImg from '../../../assets/user.png'
+import userImg2 from '../../../assets/girl.jpg'
+
 
 const HeroSection = () => {
     const [displayedText, setDisplayedText] = useState(""); // Start with an empty string
@@ -96,94 +100,153 @@ const HeroSection = () => {
     }, []);
 
     useEffect(() => {
-        // Animation for stats
-        const title = document.querySelector(".title");
-        const subtitle = document.querySelector(".subtitle");
-        title.classList.add("animate-fadeIn");
-        subtitle.classList.add("animate-fadeIn");
-
-        const stats = document.querySelectorAll(".stat");
-        stats.forEach((stat, index) => {
-            setTimeout(() => {
-                stat.classList.add("animate-fadeIn");
-            }, index * 200); // staggered animations
-        });
-
-        const badges = document.querySelectorAll(".badge");
-        badges.forEach((badge, index) => {
-            setTimeout(() => {
-                badge.classList.add("animate-fadeIn");
-            }, index * 200 + 800); // staggered animations after stats
-        });
+        setTimeout(() => {
+            const title = document.querySelector(".title");
+            const subtitle = document.querySelector(".subtitle");
+            if (title) title.classList.add("animate-fadeIn");
+            if (subtitle) subtitle.classList.add("animate-fadeIn");
+        }, 100);
     }, []);
 
-    return (
-        <section className="flex flex-col md:flex-row items-center justify-between p-14 bg-gradient-to-r from-blue-600 to-blue-800 text-white relative overflow-hidden">
-            <div className="flex-1 mb-8 md:mb-0">
-                <h1 className="text-5xl font-extrabold mb-4 title opacity-0 animate-fadeIn">{displayedText}</h1>
-                <p className="text-xl mb-6 subtitle opacity-0 animate-fadeIn">#No.1 Platform for Everyone!</p>
-                <div className="flex mb-6">
-                    <input
-                        type="text"
-                        placeholder="What are you looking for?"
-                        className="p-2 w-1/2 rounded-l-md border-2 border-gray-300 focus:outline-none focus:border-green-400"
-                    />
-                    <select className="p-2 border-2 border-gray-300 bg-white text-gray-800 rounded-r-md focus:outline-none focus:border-green-400">
-                        <option>Choose Category</option>
-                    </select>
-                    <button className="bg-green-600 text-white p-2 px-6 rounded-md ml-2 hover:bg-green-700 transition duration-300">Search</button>
-                </div>
-                <div className="flex space-x-8">
-                    <div className="text-center stat opacity-0">
-                        <h2 className="text-3xl font-bold">{counts.freelancers}M</h2>
-                        <p className="text-lg">Total Freelancers</p>
-                    </div>
-                    <div className="text-center stat opacity-0">
-                        <h2 className="text-3xl font-bold">{counts.reviews}M</h2>
-                        <p className="text-lg">Positive Reviews</p>
-                    </div>
-                    <div className="text-center stat opacity-0">
-                        <h2 className="text-3xl font-bold">{counts.orders}M</h2>
-                        <p className="text-lg">Orders Received</p>
-                    </div>
-                    <div className="text-center stat opacity-0">
-                        <h2 className="text-3xl font-bold">{counts.projects}M</h2>
-                        <p className="text-lg">Projects Completed</p>
-                    </div>
-                </div>
-            </div>
-            <div className="flex-1 relative">
-                <img
-                    src={section1}
-                    alt="Freelancer"
-                    className="object-cover w-full h-full rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105"
-                />
-                <div className="absolute top-0 right-0 flex flex-col space-y-4 p-4">
-                <div className="badge bg-white text-green-600 rounded-lg shadow-lg p-2 opacity-100 transform hover:scale-105 transition duration-300 hover:animate-bounce">
-    Proof of Quality
-</div>
 
-                    <div className="badge bg-white text-green-600 rounded-lg shadow-lg p-2 opacity-0 animate-fadeIn transform hover:scale-105 transition duration-300">Safe and Secure</div>
+    return (
+        <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 min-h-[600px] overflow-hidden banner-section">
+            {/* Left Section */}
+            <div className="flex md:flex-row flex-col items-center gap-[20px] xl:mx-[30px] px-[10px] xl:px-0 py-12 mx:auto">
+                <div className="z-10 w-full lg:w-[50%]">
+                    <h1 className="mb-6 font-bold text-[52px] text-white md:text-5xl lg:text-5xl leading-tight title">
+                    Find Top-Quality Freelance Services for Your Business
+                    </h1>
+                    <p className="mb-8 max-w-xl text-gray-200 text-lg subtitle">
+                    Collaborate with expert freelancers to achieve your business goals affordably and efficiently.
+                    </p>
+
+                    {/* Search Section */}
+                    <div className="flex sm:flex-row flex-col gap-4 bg-white mb-12 p-4 rounded-[40px]">
+                        <div className="flex-1 min-w-0">
+                            <input
+                                type="text"
+                                placeholder="What are you looking for?"
+                                className="bg-white px-4 py-3 border-r-2 w-full focus:outline-none"
+                            />
+                        </div>
+                        <select className="border-gray-300 bg-white px-4 py-3 rounded-lg sm:w-48 focus:outline-none">
+                            <option>Choose Category</option>
+                            <option>Web Development</option>
+                            <option>Design</option>
+                            <option>Marketing</option>
+                        </select>
+                        <button className="flex justify-center items-center bg-gradient-to-r from-blue-600 to-blue-800 px-8 py-3 rounded-[40px] text-white transition-colors">
+                            <FaSearch className="mr-2 w-5 h-5" />
+                            Search
+                        </button>
+                    </div>
+
+                    {/* Stats */}
+                    <div className="gap-8 grid grid-cols-2 md:grid-cols-4 text-white">
+                        <div className="stat">
+                            <div className="mb-1 font-bold text-3xl">{counts.freelancers}M</div>
+                            <div className="text-gray-300 whitespace-nowrap">Total Freelancer</div>
+                        </div>
+                        <div>
+                            <div className="mb-1 font-bold text-3xl">850M</div>
+                            <div className="text-gray-300 whitespace-nowrap">Positive Review</div>
+                        </div>
+                        <div>
+                            <div className="mb-1 font-bold text-3xl">98M</div>
+                            <div className="text-gray-300 whitespace-nowrap">Order received</div>
+                        </div>
+                        <div>
+                            <div className="mb-1 font-bold text-3xl">250M</div>
+                            <div className="text-gray-300 whitespace-nowrap">Projects Completed</div>
+                        </div>
+                    </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900 opacity-30 rounded-lg"></div>
+
+                {/* Right Section - Hidden on mobile */}
+                <div className="lg:block relative hidden w-[100%] lg:w-[50%] h-[600px]">
+                    {/* Main Image */}
+                    <div className="top-1/2 right-0 absolute flex items-end gap-[20px] tap-[20px] -translate-y-1/2">
+                        <img
+                            src={section1}
+                            alt="Professional"
+                            className="shadow-xl rounded-lg w-[300px] h-[350px] object-cover"
+                        />
+                        <img
+                            src={userImg2}
+                            alt="Professional"
+                            className="shadow-xl rounded-lg w-[300px] h-[440px] object-cover"
+                        />
+                    </div>
+
+                    {/* Floating Cards */}
+                    <div className="top-[150px] left-[200px] absolute bg-white shadow-lg p-4 rounded-lg proof">
+                        <div className="flex items-center gap-2">
+                            <div className="bg-emerald-100 p-2 rounded-full">
+                                <svg
+                                    className="w-6 h-6 text-emerald-600"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    />
+                                </svg>
+                            </div>
+                            <div>
+                                <div className="font-semibold">Proof of quality</div>
+                                <div className="text-gray-500 text-sm">Lorem Ipsum Dolor Amet</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="bottom-20 left-[103px] absolute bg-white shadow-lg p-4 rounded-lg professional">
+                        <div className="flex items-center gap-4">
+                            <div className="flex -space-x-2">
+                                <img src={userImg} className="w-[30px]" />
+                                <img src={userImg} className="w-[30px]" />
+                                <img src={userImg} className="w-[30px]" />
+                                <img src={userImg} className="w-[30px]" />
+                                <img src={userImg} className="w-[30px]" />
+
+                            </div>
+                            <div>
+                                <div className="font-semibold">58M+ Professionals</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="right-[-50px] bottom-[220px] absolute bg-white shadow-lg p-4 rounded-lg safe">
+                        <div className="flex items-center gap-2">
+                            <div className="bg-emerald-100 p-2 rounded-full">
+                                <svg
+                                    className="w-6 h-6 text-emerald-600"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    />
+                                </svg>
+                            </div>
+                            <div>
+                                <div className="font-semibold">Safe and Secure</div>
+                                <div className="text-gray-500 text-sm">Lorem Ipsum Dolor Amet</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <style jsx>{`
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                .animate-fadeIn {
-                    animation: fadeIn 0.8s forwards;
-                }
-                    
-            `}</style>
-        </section>
+        </div>
     );
 };
 
