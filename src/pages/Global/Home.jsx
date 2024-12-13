@@ -2,8 +2,11 @@ import React from 'react';
 import Header from '../../components/Global/Layouts/Header.jsx';
 import Section1 from '../../components/Global/Home/Section1.jsx';
 import Section2 from '../../components/Global/Home/Section2.jsx';
-import '../../../src/app.css'
 import Section3 from '../../components/Global/Home/Section3.jsx';
+import Section4 from '../../components/Global/Home/Section4.jsx';
+import Section5 from '../../components/Global/Home/Section5.jsx';
+import Section6 from '../../components/Global/Home/Section6.jsx';
+import Section7 from "../../components/Global/Home/Section7.jsx";
 const HomeLayout = () => {
   return (
     <>
@@ -11,6 +14,14 @@ const HomeLayout = () => {
     <Section1/>
     <Section2/>
     <Section3/>
+    <Section4/>
+    <Section5/>
+    <Section6/>
+    <Section7/>
+
+
+
+
 
 
 
