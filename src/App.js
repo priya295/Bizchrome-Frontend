@@ -9,6 +9,7 @@ import ContactUs from "./pages/Global/ContactUs.jsx";
 import PrivacyPolicy from "./pages/Global/PrivacyPolicy.jsx";
 import TearmsAndConditions from "./pages/Global/TearmsAndConditions.jsx";
 import RefundPolicy from "./pages/Global/RefundPolicy.jsx";
+import Dashboard from "./pages/Freelancer/Dashboard.jsx";
 
 
 import '../src/app.css'
@@ -26,6 +27,7 @@ function App() {
         <Route path="/privacypolicy" element={<PrivacyPolicy/>} />
         <Route path="/tearmsandconditions" element={<TearmsAndConditions/>} />
         <Route path="/refundpolicy" element={<RefundPolicy/>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
 
       </Routes>
 
