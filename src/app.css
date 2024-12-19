@@ -6,6 +6,18 @@
 .shadow-cs {
   box-shadow: 0 0 5px #cfcfcf;
 }
+.custom-bg {
+  background-image: url('../src/assets/about1.png');
+  height: 100%;
+  width: 100%; 
+}
+.custom-bg1{
+  background-image: url('../src/assets/laughing.jpg');
+  height: 100%;
+  width: 100%; 
+
+}
+
 
 .shape {
   position: absolute;
@@ -45,15 +57,22 @@
 .card-freelencer {
   transition: all 0.4s linear;
 }
-
 .card-freelencer:hover {
   transform: translateY(-8px);
 }
+  
 @keyframes example {
   0% {
     transform: rotate(360deg);
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+
+@media(max-width:576px){
+  .contact-text{
+    margin-top: 14px;
   }
 }

@@ -6,7 +6,7 @@ import Section3 from '../../components/Global/Home/Section3.jsx';
 import Section4 from '../../components/Global/Home/Section4.jsx';
 import Section5 from '../../components/Global/Home/Section5.jsx';
 import Section6 from '../../components/Global/Home/Section6.jsx';
-import Section7 from "../../components/Global/Home/Section7.jsx";
+import Footer from "../../components/Global/Layouts/Footer.jsx";
 const HomeLayout = () => {
   return (
     <>
@@ -17,7 +17,7 @@ const HomeLayout = () => {
     <Section4/>
     <Section5/>
     <Section6/>
-    <Section7/>
+    <Footer/>
 
 
 

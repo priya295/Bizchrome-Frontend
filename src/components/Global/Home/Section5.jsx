@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import graphic from "../../../assets/graphic.jpg";
-import graphic2 from "../../../assets/graphic2.jpg";
 import uxdesign from "../../../assets/uxdesign.jpg";
-import product from "../../../assets/product.jpg";
 import axiosInstance from "../../../axiosInstance";
 
 const Section5 = () => {
@@ -32,24 +29,7 @@ const Section5 = () => {
       role: "UI/UX Designer",
       image: uxdesign,
     },
-    {
-      id: 2,
-      name: "Bhaskar Tiwari",
-      role: "Graphic Designer",
-      image: graphic,
-    },
-    {
-      id: 3,
-      name: "Aksara Joshi",
-      role: "Graphic Designer",
-      image: graphic2,
-    },
-    {
-      id: 4,
-      name: "John Smith",
-      role: "Product Designer",
-      image: product,
-    },
+ 
   ];
 
   useEffect(() => {
@@ -112,3 +92,9 @@ const Section5 = () => {
   );
 };
 export default Section5;
+
+
+
+
+
+
